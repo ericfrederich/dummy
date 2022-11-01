@@ -1,3 +1,6 @@
+import json
+import os
+from pathlib import Path
 from pprint import pformat
 
 from pygments import highlight
@@ -24,6 +27,11 @@ def pcformat(obj, lang="python", style="material"):
 
 
 def cli_main():
+    with Path("c:/temp/dummy_vars.json").open("wt") as fout:
+        print(
+            json.dumps(sorted(dict(os.environ.items())), indent=2, sort_keys=True),
+            file=fout,
+        )
     print("HELLO!!!")
     print(pcformat([1, 2, "three", 4]))
     print("Bye!")
