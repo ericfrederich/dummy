@@ -8,7 +8,10 @@ packages = [{include = "dummy", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pygments = "^2.13.0"
 
+[tool.poetry.scripts]
+dummy = 'dummy.cli:cli_main'
 
 [build-system]
 requires = ["poetry-core"]
